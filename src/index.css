@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --ambient-light: 0.85;
+  --ambient-opacity: calc(var(--ambient-light) * 0.8);
+  --ambient-glow-spread: calc(var(--ambient-light) * 70px);
+  --ambient-border-glow: calc(var(--ambient-light) * 0.35);
+  --ambient-filter-brightness: calc(0.9 + var(--ambient-light) * 0.25);
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Syne', sans-serif;
+  }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2330;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #343b52;
+}
+
+/* 3D Perspective container */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-2000 {
+  perspective: 2000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Film grain & cosmic stardust overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Ambient glow responsive to --ambient-light */
+.glow-magenta {
+  box-shadow: 0 0 var(--ambient-glow-spread) -10px rgba(236, 72, 153, var(--ambient-border-glow));
+}
+.glow-cyan {
+  box-shadow: 0 0 var(--ambient-glow-spread) -10px rgba(6, 182, 212, var(--ambient-border-glow));
+}
+.glow-amber {
+  box-shadow: 0 0 var(--ambient-glow-spread) -10px rgba(245, 158, 11, var(--ambient-border-glow));
+}
+
+/* Dynamic Ambient Glow utility */
+.ambient-glow-reactive {
+  box-shadow: 0 0 calc(var(--ambient-light) * 60px) -10px rgba(244, 63, 94, calc(var(--ambient-light) * 0.35));
+}
+
+.ambient-text-glow {
+  text-shadow: 0 0 calc(var(--ambient-light) * 35px) rgba(251, 113, 133, calc(var(--ambient-light) * 0.7));
+}
+
+/* Subtle Shimmer animation for hero headline */
+@keyframes textShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: textShimmer 8s ease infinite;
+}
+

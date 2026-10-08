@@ -1,0 +1,6 @@
+{
+  "name": "Aetheria: Multiverse Motion & Parallax Showcase",
+  "description": "An interactive animated multiverse website powered by GSAP and Motion, featuring cinematic parallax scrolling, 3D artwork inspection, interactive soundscapes, and multi-dimensional story chapters.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
